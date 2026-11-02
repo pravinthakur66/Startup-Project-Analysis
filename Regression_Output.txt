@@ -1,0 +1,55 @@
+REGRESSION OUTPUT - STARTUP PROFIT ANALYSIS
+===========================================
+Dataset source : CSV file (startup_profit_analysis.csv)
+Observations   : 50
+Dependent (Y)  : Profit
+Independent (X): R&D Spend, Administration, Marketing Spend
+Method         : Multiple linear regression (ordinary least squares)
+
+REGRESSION STATISTICS
+---------------------
+Multiple R        : 0.9751
+R Square          : 0.9507
+Adjusted R Square : 0.9475
+Standard Error    : 9,232.33
+Observations      : 50
+
+ANOVA
+-----
+F statistic       : 295.98
+Significance F    : < 0.001
+
+COEFFICIENTS
+------------
+Term              Coefficient   Std Error   t Stat    P-value    Lower 95%    Upper 95%
+Intercept          50,122.19    6,572.35     7.63     < 0.001    36,892.73    63,351.65
+R&D Spend               0.8057      0.0451  17.85     < 0.001        0.7148       0.8966
+Administration         -0.0268      0.0510  -0.53       0.602       -0.1295       0.0759
+Marketing Spend         0.0272      0.0165   1.66       0.105       -0.0059       0.0603
+
+EQUATION
+--------
+Profit = 50,122.19 + 0.8057 x R&D - 0.0268 x Administration + 0.0272 x Marketing
+
+CORRELATION MATRIX
+------------------
+                  R&D      Admin    Marketing   Profit
+R&D               1.0000
+Administration    0.2420   1.0000
+Marketing         0.7242  -0.0322   1.0000
+Profit            0.9729   0.2007   0.7478      1.0000
+
+PREDICTIONS
+-----------
+R&D Spend    Administration   Marketing Spend   Predicted Profit
+21,892.92    81,910.77        164,270.70        70,037.90
+23,940.93    96,489.63        137,001.10        70,554.57
+
+SUMMARY
+-------
+- The model explains about 95% of the variation in Profit.
+- R&D Spend is the only significant predictor (p < 0.001): one extra unit of R&D
+  goes with about 0.81 extra Profit.
+- Administration (p = 0.602) and Marketing (p = 0.105) are not significant at 5%.
+- State was tested separately with dummy variables: joint F-test p = 0.997, so
+  State adds no explanatory power.
